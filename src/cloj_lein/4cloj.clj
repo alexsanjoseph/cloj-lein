@@ -71,6 +71,7 @@
 ;; 30. Remove duplicates
 ; (= (__ [1 1 2 3 3 2 2 3]) '(1 2 3 2 3))
 
+
 ((fn [x]
    (loop [i 1 cmp [(first x)]]
      (if (= i (count x))
@@ -78,3 +79,6 @@
        (if (= (nth x i) (nth x (dec i)))
          (recur (inc i) cmp)
          (recur (inc i) (conj cmp (nth x i))))))) [1 1 2 3 3 4 4])
+
+;; 31. Pack a sequence
+(#(map seq (partition-by identity %)) [1 1 2 1 1 1 3 3])
