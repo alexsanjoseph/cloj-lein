@@ -99,3 +99,9 @@
 
 ;; 36. Let it be
 [z 1 y 3 x 7]
+
+;; 37. Regular Expressions
+"ABC"
+
+;; 38. Maximum value
+((fn [& args] (reduce #(if (> %1 %2) %1 %2) args)) 1 20 3 4)
