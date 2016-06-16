@@ -93,3 +93,9 @@
 
 ;; 34. Implement Range
 (#(take (- %2 %1) (iterate inc %1)) 4 10)
+
+;; 35. Local Bindings
+7
+
+;; 36. Let it be
+[z 1 y 3 x 7]
