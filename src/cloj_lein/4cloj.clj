@@ -105,3 +105,11 @@
 
 ;; 38. Maximum value
 ((fn [& args] (reduce #(if (> %1 %2) %1 %2) args)) 1 20 3 4)
+((comp last sort list) 1 20 3 4)
+(#(->> % sort last) '(1 20 3 4))
+
+;; 39. Interleave
+(#(loop [i (dec(min (count %1) (count %2))) lst '()]
+    (if (= i -1)
+      lst
+      (recur (dec i) (conj lst (nth %2 i) (nth %1 i))))) [1 2 3 4] [5 10])
