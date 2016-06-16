@@ -118,3 +118,14 @@
 
 ;; 40. Interpose
 (#(rest (interleave (repeat %1) %2)) 0 [1 2 3 4])
+
+;; 41. Drop nth
+((fn [x y]
+  (loop [i 0 lst []]
+      (if (= i (count x))
+        lst
+        (if (not= 0 (mod (inc i) y))
+          (recur (inc i) (conj lst (nth x i)))
+          (recur (inc i) lst))))) [:a :b :c :d :e :f] 3)
+
+(#(take 8 (iterate inc %1)) 10)
