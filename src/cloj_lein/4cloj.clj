@@ -85,3 +85,6 @@
 
 ;; 32. duplicates
 (#(reduce concat (map (fn [x] (list x x)) %)) '(1 2 3))
+
+;; 33. Replicate
+(#(reduce concat (map (fn [x] (repeat %2 x)) %1)) '(1 2 3) 3)
