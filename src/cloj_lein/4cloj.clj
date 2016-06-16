@@ -82,3 +82,6 @@
 
 ;; 31. Pack a sequence
 (#(map seq (partition-by identity %)) [1 1 2 1 1 1 3 3])
+
+;; 32. duplicates
+(#(reduce concat (map (fn [x] (list x x)) %)) '(1 2 3))
