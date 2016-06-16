@@ -113,3 +113,8 @@
     (if (= i -1)
       lst
       (recur (dec i) (conj lst (nth %2 i) (nth %1 i))))) [1 2 3 4] [5 10])
+
+(mapcat list [1 2 3 4] [5 10] [3 10])
+
+;; 40. Interpose
+(#(rest (interleave (repeat %1) %2)) 0 [1 2 3 4])
