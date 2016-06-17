@@ -147,4 +147,15 @@
    (let [ymod (mod y (count x))]
     (concat (drop ymod x) (take ymod x)))) 6 [1 2 3 4 5])
 
-(= (__ 6 [1 2 3 4 5]) '(2 3 4 5 1))
+;; 45. Iterate Intro
+(take 5 (iterate #(+ 3 %) 1))
+'(1 4 7 10 13)
+
+;; 46. Flipping out
+((defn flip-out [f]
+  (fn [& args] (apply f (reverse args)))) 7 8)
+
+;; 47. contains
+(contains? #{4 5 6} 4)
+
+(contains? [1 1 1 1 1] 2)
