@@ -130,3 +130,19 @@
 
 ;; 42. factorial
 (#(reduce * (range 1 (inc %))) 8)
+
+;; 43. Reverse interleave
+;(= (__ (range 10) 5) '((0 5) (1 6) (2 7) (3 8) (4 9)))
+
+(partition 4 6 (range 20))
+(reduce concat (partition 1 5 (drop 1 (range 20))))
+
+
+((fn [x y]
+    (loop [i (dec y) lst '()]
+      (if (< i 0)
+        lst
+        (recur (dec i)
+          (conj lst (reduce concat (partition 1 y (drop i x)))))))) (range 10) 5)
+
+(reduce concat (partition 1 5 (drop 0 (range 10))))
