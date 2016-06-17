@@ -134,10 +134,6 @@
 ;; 43. Reverse interleave
 ;(= (__ (range 10) 5) '((0 5) (1 6) (2 7) (3 8) (4 9)))
 
-(partition 4 6 (range 20))
-(reduce concat (partition 1 5 (drop 1 (range 20))))
-
-
 ((fn [x y]
     (loop [i (dec y) lst '()]
       (if (< i 0)
@@ -145,4 +141,10 @@
         (recur (dec i)
           (conj lst (reduce concat (partition 1 y (drop i x)))))))) (range 10) 5)
 
-(reduce concat (partition 1 5 (drop 0 (range 10))))
+
+;; 44. Rotate
+((fn [y x]
+   (let [ymod (mod y (count x))]
+    (concat (drop ymod x) (take ymod x)))) 6 [1 2 3 4 5])
+
+(= (__ 6 [1 2 3 4 5]) '(2 3 4 5 1))
