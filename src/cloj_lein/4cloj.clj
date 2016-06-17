@@ -159,3 +159,13 @@
 (contains? #{4 5 6} 4)
 
 (contains? [1 1 1 1 1] 2)
+
+;; 48. Some
+
+(some #{2 7 6} [5 6 7 8])
+(some #(when (even? %) %) [5 6 7 8])
+
+;; 49. Split a sequence
+((fn [y x]
+   (let [ymod (mod y (count x))]
+    (list (take ymod x) (drop ymod x)))) 6 [1 2 3 4 5])
