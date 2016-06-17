@@ -128,4 +128,5 @@
           (recur (inc i) (conj lst (nth x i)))
           (recur (inc i) lst))))) [:a :b :c :d :e :f] 3)
 
-(#(take 8 (iterate inc %1)) 10)
+;; 42. factorial
+(#(reduce * (range 1 (inc %))) 8)
