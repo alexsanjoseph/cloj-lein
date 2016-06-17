@@ -169,3 +169,6 @@
 ((fn [y x]
    (let [ymod (mod y (count x))]
     (list (take ymod x) (drop ymod x)))) 6 [1 2 3 4 5])
+
+;; 50. Split by type
+(#(vals (group-by type %)) [1 :a 2 :b 3 :c])
