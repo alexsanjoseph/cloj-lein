@@ -187,4 +187,10 @@
   (map > ()))
 (identity x)
 
-(partition-by identity (map > (drop 1 x) (drop-last 1 x)))  
+(partition-by identity (map > (drop 1 x) (drop-last 1 x)))
+
+
+;; 54.
+
+;; 58. Recursion
+((fn foo [x] (when (> x 0) (conj (foo (dec x)) x))) 5)
