@@ -189,8 +189,18 @@
 
 (partition-by identity (map > (drop 1 x) (drop-last 1 x)))
 
+(int (/ 8 3))
 
-;; 54.
+(inc i 3)
+;; 54. Partition a Sequence
+((fn [x y]
+  (let [reps (int (/ (count y) x)) newy (take (* reps x) y)]
+    (apply map (take-nth 2 (range 9)) (range x)))) 2 (range 8))
 
+(take-nth 1 (range 8))
+
+;; (take-nth 2 (range 9))
+
+(+ 1 2)
 ;; 58. Recursion
 ((fn foo [x] (when (> x 0) (conj (foo (dec x)) x))) 5)
