@@ -203,3 +203,10 @@
 
 ;; 68. Recur
 [7 6 5 4 3]
+
+;; 71. Threading
+;; (= (__ (sort (rest (reverse [2 5 4 1 3 6]))))
+  ;  (-> [2 5 4 1 3 6] (reverse) (rest) (sort) (__))
+  ;  5]
+
+last
