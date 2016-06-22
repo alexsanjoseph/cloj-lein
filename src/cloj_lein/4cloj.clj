@@ -210,3 +210,12 @@
   ;  5]
 
 last
+
+(apply + (map inc (take 3 (drop 2 [2 5 4 1 3 6]))))
+
+(#(contains? %2 %1 and ke) :a {:a nil :b 2})
+(#(contains? %2 %1 and ) :b {:a nil :b 2})
+(#(contains? %2 %1) :a {:a nil :b 2}
+
+
+ (__ :b {:a nil :b 2}))
