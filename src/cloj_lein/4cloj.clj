@@ -211,6 +211,28 @@
 
 last
 
+;; 101. Levenstein
+(memoize(defn Leven [x y]
+          (let [x1 (into [] x) y1 (into [] y)]
+            (if (= 0 (* (count x1) (count y1)))
+              (max (count x1) (count y1))
+              (let [cost (if (= (last x1) (last y1)) 0 1)]
+                (min (+ (Leven (drop-last x1) (drop-last y1)) cost)
+                     (inc (Leven (drop-last x1) y1))
+                     (inc (Leven x1 (drop-last y1)))))))))
+
+(Leven  "ttttatt" "tcaacc")
+(min 1 2 3)
+
+(drop (into [] "Alex"))
+(drop)
+
+(if-let true [])
+(if-let [x false]
+  x
+  "Nopes")
+
+
 ;; 132. nil
 (#(and (contains? %2 %1) (nil? (get %2 %1))) :a {:a nil :b 2})
 
