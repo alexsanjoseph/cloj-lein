@@ -211,11 +211,8 @@
 
 last
 
-(apply + (map inc (take 3 (drop 2 [2 5 4 1 3 6]))))
+;; 132. nil
+(#(and (contains? %2 %1) (nil? (get %2 %1))) :a {:a nil :b 2})
 
-(#(contains? %2 %1 and ke) :a {:a nil :b 2})
-(#(contains? %2 %1 and ) :b {:a nil :b 2})
-(#(contains? %2 %1) :a {:a nil :b 2}
-
-
- (__ :b {:a nil :b 2}))
+;; 145. For[
+(for [x (range 40) :when (= 1 (rem x 4))] x)
